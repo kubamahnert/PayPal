@@ -19,6 +19,9 @@ class PayPalContext extends Object {
   /** @var string */
   private $experienceProfileId;
 
+  /** @var  string */
+  private $intent;
+
   /**
    * @param string $clientId
    * @param string $secret
@@ -81,6 +84,17 @@ class PayPalContext extends Object {
    */
   public function setExperienceProfileId($experienceProfileId) {
     $this->experienceProfileId = $experienceProfileId;
+  }
+
+  /**
+   * @param string $intent
+   */
+  public function setIntent($intent) {
+    $this->intent = $intent;
+  }
+
+  public function getIntent() {
+    return $this->intent;
   }
 
 }

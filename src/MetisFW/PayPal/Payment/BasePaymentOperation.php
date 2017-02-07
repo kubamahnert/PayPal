@@ -68,12 +68,18 @@ abstract class BasePaymentOperation extends Object implements PaymentOperation {
     }
 
     $payment = new Payment();
-    $payment->setIntent("sale")
-      ->setPayer($payer);
+    $payment->setPayer($payer);
+
+    if ($this->context->getIntent()) {
+      $payment->setIntent($this->context->getIntent());
+    } else {
+      $payment->setIntent("sale");
+    }
 
     if ($this->context->getExperienceProfileId()) {
       $payment->setExperienceProfileId($this->context->getExperienceProfileId());
     }
+
 
     $transactions = $this->getTransactions();
     $this->checkTransactions($transactions);

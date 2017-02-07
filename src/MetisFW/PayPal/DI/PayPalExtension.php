@@ -46,6 +46,10 @@ class PayPalExtension extends CompilerExtension {
     if (isset($config['experienceProfileId'])) {
       $paypal->addSetup('setExperienceProfileId', array($config['experienceProfileId']));
     }
+
+    if (isset($config['intent'])) {
+      $paypal->addSetup('setIntent', array($config['intent']));
+    }
   }
 
   /**

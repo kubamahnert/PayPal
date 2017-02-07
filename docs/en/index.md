@@ -18,6 +18,12 @@ payPal:
   # optional Payment Experience Profile ID
   # https://developer.paypal.com/docs/api/payment-experience/
   # experienceProfileId: XP-AAAA-BBBB-CCCC-DDDD
+
+  # optional payment intent
+  # default value is "sale"
+  # https://developer.paypal.com/docs/classic/paypal-payments-standard/integration-guide/authcapture/
+  # Valid Values: ["sale", "authorize", "order"]
+  # intent: authorize
   sdkConfig:
     mode: sandbox
     log.Enabled: true
